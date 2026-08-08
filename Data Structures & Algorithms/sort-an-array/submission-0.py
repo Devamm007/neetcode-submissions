@@ -4,19 +4,18 @@ class Solution:
         r = len(right)
         i = 0
         j = 0
-        merged = []
         while i < l and j < r:
             if left[i] <= right[j]:
-                merged.append(left[i])
+                left.append(left[i])
                 i += 1
             else:
-                merged.append(right[j])
+                left.append(right[j])
                 j += 1
         if i < l:
-            merged += left[i:]
+            left += left[i:l]
         if j < r:
-            merged += right[j:]
-        return merged
+            left += right[j:]
+        return left[l:]
 
     def mergesort(self, l: List[int]) -> List[int]:
         n = len(l)

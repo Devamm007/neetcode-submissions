@@ -12,7 +12,7 @@ class Solution:
 
         # return None 
 
-        winner = None
+        candidate = None
         count = 0
 
         for num in nums:
@@ -20,7 +20,7 @@ class Solution:
                 candidate = num
             count += 1 if candidate == num else -1
 
-        freq = sum(1 for num in nums if nums==candidate)
+        freq = sum(1 for num in nums if num==candidate)
         if freq > len(nums) // 2:
             return candidate
         
